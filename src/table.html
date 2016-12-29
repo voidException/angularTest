@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+    <TITLE> New Document </TITLE>
+    <meta charset="utf-8">
+</HEAD>
+
+<BODY>
+<TABLE width="100%" border="1" id = "tb">
+    <TR>
+        <TD><INPUT TYPE="text" NAME="a1" value="张三"></TD>
+        <TD><font color="red">男</font></TD>
+        <TD>21</TD>
+    </TR>
+    <TR>
+        <TD><INPUT TYPE="text" NAME="a2" value="李四"></TD>
+        <TD><font color="red">女</font></TD>
+        <TD>19</TD>
+    </TR>
+</TABLE>
+<SCRIPT LANGUAGE="JavaScript">
+    <!--
+    getValue();
+    function getValue()
+    {
+        alert("表格总行数="+tb.rows.length);
+        for( i = 0 ; i < tb.rows.length ; i ++){
+            Names = tb.rows[i].cells[0].getElementsByTagName("INPUT")[0].value;
+            gender = tb.rows[i].cells[1].innerHTML;
+            age   = tb.rows[i].cells[2].innerText;
+            alert(Names);
+            alert(gender);
+            alert(age);
+        }
+    }
+    //-->
+</SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #nav{
+            display:none;
+        }
+        #top:hover #nav{
+            display: block;
+        }
+
+        #nav>li>ul.level11{
+            display: none;
+
+        }
+        
+    </style>
+    <script>
+
+        function openCaidan(obj){
+
+            var  node=document.getElementById('liOne');
+            console.log(node.style.display);
+//            if (node.style.display=="block"){
+//                node.style.display="none";
+//            }else{
+//                node.style.display="block";
+//            }
+            //console.log(obj)
+            //console.log(node)
+            //console.log(node.style.display);
+            //document.getElementById('qq').style.display="block";
+
+            var labelArray=[];
+            var  node = obj;
+            var nodeParent = node.parentNode;
+
+            function siblingElems(elem){
+                var nodes=[ ];
+                while((elem=elem.nextSibling)){
+                    if(elem.nodeType==1){
+                        nodes.push(elem);
+                    }
+                }
+                return nodes;
+            }
+            var sub=siblingElems(node);
+
+            console.log(sub[0].tagName);
+
+            var labeNeed=sub[0];
+
+            for(var i=0;i<sub.length;i++){
+                console.log(sub[i].tagName);
+                if (sub[i].tagName==='UL'){
+
+                    //labeNeed.style.display="none";
+                    if (labeNeed.style.display=="block"){
+                        labeNeed.style.display="none";
+                    }else{
+                        labeNeed.style.display="block";
+                    }
+                }
+            }
+        }//
+
+        function onMouseOver(){
+            console.log('oo')
+        }
+
+
+    </script>
+</head>
+<body>
+
+
+    <div id="top">
+         哈哈
+        <ul id="nav">
+
+            <li><a href="#"> 首页面 </a></li>
+
+            <li ><a href="#" onclick="openCaidan(this)"> 关于我们</a>
+                <ul class="level11" id="liOne">
+                    <li>我们的故事 </li>
+                    <li>我们的团队</li>
+                </ul>
+            </li>
+
+            <li><a href="#">服务</a>
+                <ul class="level11">
+                    <li>网页设计</li>
+                    <li>页面制作</li>
+                    <li>程序开发</li>
+                </ul>
+            </li>
+
+            <li><a href="#">联系我们</a>
+                <ul class="level11">
+                    <li><a href="#">团队主力</a></li>
+                    <li><a href="#">团队成员</a></li>
+                    <li><a href="#">总人数</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+   <!--
+    <style>
+        #nav{
+            display:none;
+        }
+        #top:hover #nav{
+            display: block;
+        }
+
+        #nav>li>ul.level11{
+            display: none;
+
+        }
+        #nav > li:hover>ul.level11{
+            display: block;
+        }
+
+    </style>
+    <div id="top">
+        哈哈
+        <ul id="nav">
+
+            <li><a href="#"> 首页面 </a></li>
+
+            <li><a href="#"> 关于我们</a>
+                <ul class="level11">
+                    <li><a href="#">我们的故事 </a></li>
+                    <li><a href="#">我们的团队</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">服务</a>
+                <ul class="level11">
+                    <li><a href="#">网页设计</a></li>
+                    <li><a href="#">页面制作</a></li>
+                    <li><a href="#">程序开发</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#">联系我们</a>
+                <ul class="level11">
+                    <li><a href="#">团队主力</a></li>
+                    <li><a href="#">团队成员</a></li>
+                    <li><a href="#">总人数</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+
+   -->
+
+</body>
+</html>

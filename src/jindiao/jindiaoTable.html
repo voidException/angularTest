@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>机构尽调表</title>
+    <link rel="stylesheet" href="style/jiandiaoTable.css">
+    <link rel="stylesheet" href="style/commonStyle.css">
+    <script  src="./angularJS/angular.js"></script>
+    <script  src="javaScript/jindiaoTable.js" ></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <nav id="nav">
+        <span>机构尽调表</span>
+    </nav>
+    <!--尽调概况-->
+    <section>
+        <header class="header">
+            <span>尽调概况</span>
+            <img class="headerImg" src="../image/jiantou.png">
+        </header>
+        <form>
+            <div id="jigouWrapper">
+                <span style="margin-top: 8px;color: red"> * </span>
+                <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">机构全称</span>
+                <input class="jigouname"  ng-model="basicFact.jigouName" type="text"  maxlength="50" placeholder=" 必填,长度小于50字符" >
+            </div>
+            <div class="bigWrapper">
+                <div class="xingWordSelectWrapper" >
+                    <div class="xingWordSelect">
+                        <span style="margin-top: 8px;color: red"> * </span>
+                        <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">申请日期</span>
+                        <input id="shenqingriqi"  class="commonInputStyle" ng-model="basicFact.applyDate" type="date" />
+                    </div>
+                    <div class="xingWordSelect" >
+                        <span style="margin-top: 8px;color: red"> * </span>
+                        <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">金融顾问</span>
+                        <input id="jinrongguwen"  class="commonInputStyle"   ng-model="basicFact.jinrongConsult" type="text" maxlength="20" placeholder=" 必填,长度小于20字符"/>
+                    </div>
+                    <div class="twoSelect">
+                        <span style="font-size: 12px;margin-right: 20px;">是否录音</span>
+                        <div style="margin-right: 60px">
+                             <input ng-model="basicFact.recordSoundYes" type="checkbox"/>
+                             <span style="font-size: 12px;">是</span>
+                        </div>
+                        <div>
+                            <input ng-model="basicFact.recordSoundNo" type="checkbox" />
+                            <span  style="font-size: 12px;">否</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="xingWordSelectWrapper">
+                    <div class="xingWordSelect">
+                        <span style="margin-top: 8px;color: red"> * </span>
+                        <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">资料补全日期</span>
+                        <input ng-model="basicFact.materialCompleteDoneDate"  class="commonInputStyle" type="date" />
+                    </div>
+                    <div class="xingWordSelect">
+                        <span style="font-size: 12px;">现场风控人</span>
+                        <input ng-model="basicFact.liveRiskMan"  class="commonInputStyle" type="text" />
+                    </div>
+                    <div class="twoSelect">
+                        <span style="font-size: 12px;margin-right: 20px;">是否视频</span>
+                        <div style="margin-right: 60px">
+                            <input ng-model="basicFact.recordVedioYes" type="checkbox"/>
+                            <span style="font-size: 12px;">是</span>
+                        </div>
+                        <div>
+                            <input ng-model="basicFact.recordVedioNo" type="checkbox" />
+                            <span style="font-size: 12px;">否</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="xingWordSelectWrapper">
+                    <div class="xingWordSelect">
+                        <span style="margin-top: 8px;color: red"> * </span>
+                        <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">尽调开始日期</span>
+                        <input  ng-model="basicFact.surveyBeginDate" class="commonInputStyle" type="date" />
+                    </div>
+                    <div class="xingWordSelect">
+                        <span style="font-size: 12px;margin-right: 15px">尽调方式</span>
+                        <select ng-model="basicFact.surveyMethodModel" ng-options="x for x in basicFact.surveyMethod"  style="width: 150px;height: 25px"></select>
+                    </div>
+                    <div>{{basicFact.surveyMethodModel}}</div>
+                    <div class="xingWordSelect">
+                        <span style="font-size: 12px;margin-right: 15px">尽调准备进度</span>
+                        <select ng-model="basicFact.surveyProgressModel" ng-options="x for x in basicFact.surveyProgress"  style="width: 150px;height: 25px"></select>
+                    </div>
+
+                </div>
+            </div>
+            <!--取消 保存-->
+            <div class="quxiaoBaocun">
+                <input class="cancel" type="button" value="取消" >
+                <input class="save"  type="button" value="保存"  >
+            </div>
+        </form>
+   </section>
+
+
+</body>
+</html>

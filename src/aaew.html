@@ -1,0 +1,45 @@
+<html>
+<body>
+<script type="text/javascript">
+    function clicke(x){
+        //获取当前所在行数
+       // alert(x.parentNode.parentNode.rowIndex);
+        //需要引入jquery才能获取当前行对应的值
+        //     var id=$(x).parent().find(".first").val();
+        //alert(id)
+    }
+</script>
+<table>
+    <tr>
+        <td>
+            <input class="first" type="button"value="1"onclick="clicke(this)"/>
+            <input class="seconde" type="button"value="2"onclick="clicke(this)"/>
+
+            <input id="third" type="text"value="3"  onclick="clicke(this)">
+                    <label  for="third"  style="display: inline-block">hahh</label>
+            </input>
+        </td>
+        <td>
+            <div id="selectMe" class="dropdown">
+                <span style="color: #0f0f0f">选择</span>
+                <div class="dropdown-content" >
+                    <div style="width: 140px" id="tr1" ng-repeat="x in dataForTheTree">
+                        <div id="catagory" ng-click="changeState(x.id,'+countNum+')">
+                            <font color="#ffffff">{{x.name}}</font>
+                        </div>
+                        <span id="childSel_{{x.id}}_ countNum " style="display:none;" >
+                            <div ng-repeat="y in  x.schema">
+                                 <a href="#"> <p class="'+ variableC +'" ng-click=getvalue($event,y)>{{y.name}}</p></a>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+</html>

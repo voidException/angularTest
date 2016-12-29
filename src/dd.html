@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+<script type="text/javascript">
+    function clicke(x){
+        //获取当前所在行数
+        alert(x.parentNode.parentNode.rowIndex);
+        //需要引入jquery才能获取当前行对应的值
+        //     var id=$(x).parent().find(".first").val();
+        //alert(id)
+    }
+</script>
+<table>
+    <tr>
+        <td>
+            <input class="first" type="button"value="1"onclick="clicke(this)"/>
+            <input class="seconde" type="button"value="2"onclick="clicke(this)"/>
+            <input class="third" type="button"value="3"onclick="clicke(this)"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input class="first" type="button"value="1"onclick="clicke(this)"/>
+            <input class="seconde" type="button"value="2"onclick="clicke(this)"/>
+            <input class="third" type="button"value="3"onclick="clicke(this)"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input class="first" type="button"value="1"onclick="clicke(this)"/>
+            <input class="seconde" type="button"value="2"onclick="clicke(this)"/>
+            <input class="third" type="button"value="3"onclick="clicke(this)"/>
+        </td>
+    </tr>
+</table>
+
+</body>
+
+</html>

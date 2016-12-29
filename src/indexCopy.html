@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+
+
+    <script src="./angular.js"></script>
+
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <meta charset="utf-8">
+    <style>
+
+        #sex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #select{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #c1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #x{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #selectMe{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 140px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            z-index: 100;
+            top:25px;
+            left: 0px;
+            background-color: #f9f9f9;
+            min-width: 140px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 5px 6px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            z-index: 100;
+        }
+    </style>
+    <script>
+        class SubC{
+            constructor(props){
+
+            }
+            static getInnerHTML()
+            {
+                console.log(document.getElementById("tr1").innerHTML);
+            }
+            getInnerText(){
+                console.log(document.getElementById("tr2").innerText);
+            }
+            addDiv(){
+                console.log('div');
+
+            }
+        }
+        var c1 = new SubC();
+
+        window.onload=function(){
+//            for(var i=1;i<=90;i++){
+//                window["xf"+i]=0;
+//                console.log(window["xf"+i]);
+//            }
+        }
+        function clicke(x){
+            //获取当前所在行数
+            alert(x.parentNode.parentNode.rowIndex);
+            //需要引入jquery才能获取当前行对应的值
+            //     var id=$(x).parent().find(".first").val();
+            //alert(id)
+        }
+        function alertTips(){
+            console.log('测试鼠标滑过事件');
+            //document.getElementsByClassName(2);
+            //alert($(this).attr('id'));
+            $("#xiugai").focus(function(){
+                $(this).attr('type','button');
+            });
+        }
+
+        function onMouseOverInput(obj) {
+            console.log(document.getElementById("nosee"));
+            document.getElementById("nosee").style.display="block"
+
+            console.log('onMouseOver');
+            console.log(obj);
+            //以下函数是获取tips应该在的位置的绝对坐标
+            function getX(obj){
+                return obj.offsetLeft + (obj.offsetParent ? getX(obj.offsetParent) : obj.x ? obj.x : 0);
+            }
+            function getY(obj){
+                return (obj.offsetParent ? obj.offsetTop + getY(obj.offsetParent) : obj.y ? obj.y : 0);
+            }
+            var  x=getX(obj);
+            var  y=getY(obj);
+
+            console.log(obj.offsetLeft + (obj.offsetParent ? getX(obj.offsetParent) : obj.x ? obj.x : 0));
+            console.log(obj.offsetParent ? obj.offsetTop + getY(obj.offsetParent) : obj.y ? obj.y : 0);
+            //创建一个元素，然后把要显示的内容放入到该元素
+            var cFont = document.createElement('div');
+            cFont.setAttribute("color","red");
+            cFont.setAttribute("size","12");
+            cFont.setAttribute("z-index",1000000);
+            cFont.setAttribute("position","absolute");
+            cFont.setAttribute("left",x);
+            cFont.setAttribute("top",y);
+            cFont.innerHTML="红色";
+            document.div.appendChild(cFont);
+            //var  node =  document.getElementById(obj.id);
+            //var node =getElementsByClassName(C1);
+            //node.appendChild(cFont);
+        }
+
+        function openCaidan(obj){
+            var  node=document.getElementById('qq');
+            node.style.display="block";
+            console.log(node)
+            console.log(node.style.display);
+            //document.getElementById('qq').style.display="block";
+        }
+        function onMouseOver(){
+            console.log('oo')
+        }
+
+
+    </script>
+
+</head>
+<body ng-app="myapp">
+<input type="hidden" value="nihao "/>
+
+<div type="text" name="name"  id="11" onmouseover="onMouseOverInput(this)"/>kkk</div>
+<div  style="display: none;" id="nosee">  看不见我</div>
+
+<div ng-controller="HelloController" >
+    <h2>Welcome {{helloTo.title}} to the world of  angular!</h2>
+</div>
+
+
+
+<div id="container" ng-controller="HelloController">
+    <input id="xiugai"  type="text" name=""  value="测试失去焦点"  onblur="myonBlur()"  >
+    <table>
+
+        <tr ng-repeat="k in list">
+            <td>
+                {{$index}}
+            </td>
+            <td>
+                <div style="position: relative">
+                    <input   id={{$index}} type="text" name=""  ng-click=alertTips() ng-readonly=readMap.c1>
+                    <p   style="display:none;z-index: 10;position: absolute;top:-5px; left: 0px">你好</p>
+                </div>
+            </td>
+
+            <td>
+                <div id="selectMe" class="dropdown" >
+                    <p  onmousemove="onMouseOver()">选择</p>
+                    <div class="dropdown-content"   >
+
+                        <div id="tr1" ng-repeat="x in srcData.jsonObject"  ng-init="pIndex = $index">
+                            <div  onclick="openCaidan(this)">{{x.name}}</div>
+                            <div  id="qq" ng-repeat="y in  x.schema"   ng-hide= " ">
+                                <p  class={{$index}}  ng-click=getvalue($event,k,y)>{{y.name}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </td>
+
+
+            <td>
+                <input class="third" type="button"value="3" onclick="clicke(this)"/>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+    var hello=100;
+    function  myonBlur(){
+        console.log("onBlur");
+    }
+    var po="C1";
+
+    var obj= angular.module("myapp", []);
+    obj.controller("HelloController", function($scope) {
+
+        $scope.helloTo = {};
+        $scope.helloTo.title = "AngularJS";
+        $scope.list=[1,2,3,4,5,6,7];
+        $scope.srcData={"tenantId":"all","jsonObject":[{ "hidden":true, "schema":[{"clazzType":"STRING","name":"测试1","id":"test1"},{"clazzType":"STRING","name":"测试2","id":"test2"},{"name":"测试3","id":"test3","type":"String"}],"name":"测试对象","id":"testObj","type":"obj"},{"hidden":false,"schema":[{"name":"姓名","id":"username","type":"String"},{"name":"性别","id":"gender","type":"String"},{"name":"年龄","id":"age","type":"String"},{"name":"出生日期","id":"birthday","type":"String"},{"name":"身份证号","id":"idNo","type":"String"},{"name":"手机号","id":"phone","type":"String"},{"name":"户籍","id":"oriPlace","type":"String"},{"name":"现住址","id":"address","type":"String"},{"name":"qq号码","id":"qqNo","type":"String"},{"name":"电子邮箱","id":"email","type":"String"},{"name":"工作城市","id":"workCity","type":"String"},{"name":"测试2","id":"test2","type":"String"},{"name":"测试1","id":"test1","type":"String"}],"name":"个人信息","id":"personInfo","type":"obj"}]}
+
+
+//     $scope.objitem1=[true,true,true,false,true];
+
+        $scope.objitem={
+            "C1":[true,true,true,true,true]
+        }
+
+//     $scope.stateObj.push(objitem); //放入到C1中
+
+        //此函数是折叠类目用的
+        $scope.changeState=function($index){
+            var localstate=$scope.srcData.jsonObject[$index].hidden; //记录之前的状态
+            console.log(localstate);
+            $scope.srcData.jsonObject[$index].hidden=!localstate;
+            console.log($index);
+        }
+        //此函数为当选择下拉列表时触发
+        $scope.getvalue=function($event,k,item){
+            // console.log($event.target.attributes);
+            var className=$event.target.getAttribute("class");
+            console.log(className);
+            console.log(hello);
+            // var inputid=$event.target.id;
+            //console.log(item.id);
+            //console.log(k);
+            document.getElementById(k-1).value=item.id;
+            // document.getElementById(inputid).value='hahah';
+            // document.getElementById(k+100-1).innerText='哈哈哈';
+//           document.getElementById(className).focus(function(){
+//               $(this).attr('type','button');
+//           });
+            $scope.readValue=[true,false,true] ;
+
+            $scope.readMap={
+                c1:true
+            };
+
+
+        }
+        //此函数是当input离开时触发
+        $scope.inputOnBlur=function(){
+            console.log("ngBlur");
+        }
+
+        $scope.alertTips=function(){
+            console.log('input');
+        }
+
+
+    });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

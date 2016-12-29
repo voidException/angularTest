@@ -1,0 +1,87 @@
+#nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    background-color: #F5F5F5;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #E6E6E6;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.headerImg{
+    height: 26px;
+    width: 26px;
+}
+form{
+    padding-top: 10px;
+}
+#jigouWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #919191;
+    margin-left: 50px;
+}
+.jigouname{
+    height: 20px;
+    width: 600px;
+    border-radius: 4px;
+    border:1px solid #DBDBDB ;
+}
+.bigWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.xingWordSelectWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 260px;
+}
+.xingWordSelect{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: #919191;
+    margin-top: 15px;
+}
+.twoSelect{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #919191;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+.commonInputStyle{
+    height: 23px;
+    width: 150px;
+    border-radius: 4px;
+    border:1px solid #DBDBDB ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

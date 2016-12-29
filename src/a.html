@@ -1,0 +1,243 @@
+
+<!doctype html>
+<html>
+<head>
+
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <meta charset="utf-8">
+    <style>
+        #container{
+            display:flex;
+            background-color: #ffffff;
+            height: 600px;
+            width: 1000px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #sex{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #select{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #c1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #x{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 60px;
+        }
+        #selectMe{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-color: black;
+            border-style:solid ;
+            height: 24px;
+            width: 140px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top:25px;
+            left: 0px;
+            background-color: #f9f9f9;
+            min-width: 140px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 5px 6px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+    <script>
+        class SubC{
+            constructor(props){
+
+            }
+            static getInnerHTML()
+            {
+                console.log(document.getElementById("tr1").innerHTML);
+            }
+            getInnerText(){
+               // console.log(document.getElementById("tr2").innerText);
+
+                console.log(alert(document.getElementById("c5").value));
+
+                var aa=document.getElementById("c5").value='哈哈哈';
+
+
+            }
+        }
+        var c1 = new SubC();
+    </script>
+
+</head>
+<body ng-app="myapp">
+
+<div ng-controller="HelloController" >
+    <h2>Welcome {{helloTo.title}} to the world of  angular!</h2>
+</div>
+
+<div id="container" ng-controller="HelloController">
+
+
+    <input id="c5"  type="text"  value=" " onclick=c1.getInnerText() />
+
+    <div id="selectMe" class="dropdown">
+        <span>选择</span>
+        <div class="dropdown-content">
+            <!--注意以下两个方法的区别 -->
+            <div id="tr1" onclick=SubC.getInnerHTML()>
+                <p>车贷</p>
+                <div ng-show="true">
+                    <p>InnerHTML</p>
+                    <p>InnerHTML</p>
+                    <p>InnerHTML</p>
+                </div>
+            </div>
+            <div  id="tr2" onclick=c1.getInnerText()> <p>{{test.phone.key}}</p></div>
+            <div ng-click=getvalue()>年龄</div>
+            <div ng-click=getvalue()>姓名</div>
+            <div ng-click=getvalue()>住址</div>
+        </div>
+    </div>
+    <div id="c1">
+        <p>c1</p>
+    </div>
+    <div id="x">
+
+    </div>
+
+</div>
+
+
+<script>
+    var obj= angular.module("myapp", []);
+    obj.controller("HelloController", function($scope) {
+        $scope.helloTo = {};
+        $scope.helloTo.title = "AngularJS";
+
+        $scope.test={
+            phone:{
+                key:'手机号',
+                value:'15652649121'
+            },
+            age:{
+                key:'年龄',
+                value:18
+            }
+        };
+
+        $scope.othertest={
+            catagory1:{
+                phone:{
+                    key:'手机号',
+                    value:'15652649121'
+                },
+                age:{
+                    key:'年龄',
+                    value:18
+                }
+            },
+            catagory2:{
+                job:{
+                    key:'company',
+                    value:'蜜蜂汇金'
+                },
+                address:{
+                    key:'莱锦',
+                    value:18893
+                }
+            }
+        }
+
+        $scope.getvalue=function(){
+            console.log('hee');
+
+        }
+    });
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

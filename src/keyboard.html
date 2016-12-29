@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function keydownDel(e,ele)
+        {
+            var keynum;
+            var keychar;
+            keynum = window.event ? e.keyCode : e.which;
+            keychar = String.fromCharCode(keynum);
+
+            console.log(keynum);
+            console.log(ele);
+            if(keynum==8){
+                document.getElementById("inputid").value="";
+            }
+
+        }
+        function onMouseOvert(obj) {
+            var cFont = document.createElement('p');
+            cFont.setAttribute("color", "red");
+            cFont.setAttribute("size", "12");
+//            cFont.setAttribute("z-index", 1000000);
+//            cFont.setAttribute("position", "absolute");
+//            cFont.setAttribute("left", x);
+//            cFont.setAttribute("top", y);
+            cFont.innerHTML = "红色";  //这个可以是显示的值.查询本地存储的数据
+            // document.div.appendChild(cFont);
+            var  node =  document.getElementById(obj.id);
+            console.log(obj.id);
+            //var  node =  document.getElementById('divid');
+            //var node =getElementsByClassName(C1);
+            var elemParent = node.parentNode;
+            //node.appendChild(cFont);
+
+            function addInput(){
+                console.log('addinput');
+                elemParent.replaceChild(node, cFont);
+            }
+
+            cFont.onmouseleave=function(){addInput()};
+
+            elemParent.replaceChild(cFont, node);
+        }
+
+
+       function onMouseMoveInput(obj){
+            //通过父节点获取所有兄弟节点,然后找出来label标签,改变display属性和label的内容
+            var labelArray=[];
+            var  node =  document.getElementById(obj.id);
+            var nodeParent = node.parentNode;
+
+           function siblingElems(elem){
+               var nodes=[ ];
+               while((elem=elem.nextSibling)){
+                   if(elem.nodeType==1){
+                       nodes.push(elem);
+                   }
+               }
+               return nodes;
+           }
+           var sub=siblingElems(node);
+
+           console.log(sub[0].tagName);
+
+           var labeNeed=sub[0];
+           for(var i=0;i<sub.length;i++){
+               if (sub[i].tagName==='LABEL'){
+                   labeNeed.innerText="哈哈哈";
+                   labeNeed.style.display="inline-block";
+
+               }
+           }
+
+       }
+        function onMouseOutInput(obj){
+            //通过父节点获取所有兄弟节点,然后找出来label标签,改变display属性和label的内容
+
+            var labelArray=[];
+            console.log(obj);
+            var  node =  document.getElementById(obj.id);
+            console.log(node);
+            var nodeParent = node.parentNode;
+
+            function siblingElems(elem){
+                var nodes=[ ];
+                while((elem=elem.nextSibling)){
+                    if(elem.nodeType==1){
+                        nodes.push(elem);
+                    }
+                }
+                return nodes;
+            }
+            var sub=siblingElems(node);
+
+            console.log(sub[0].tagName);
+
+            var labeNeed=sub[0];
+            for(var i=0;i<sub.length;i++){
+                if (sub[i].tagName==='LABEL'){
+                    labeNeed.innerText="啊啊啊";
+                    labeNeed.style.display="none";
+                }
+            }
+        }
+
+    </script>
+
+    <style>
+        #labelid{
+            display: block;
+            position: relative;
+            cursor:pointer;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <table class="table1">
+        <tr>
+            <td>
+                <input type="text" onkeydown="keydownDel(event,this)" id="inputid" onmousemove="onMouseMoveInput(this)"  onmouseout="onMouseOutInput(this)"/>
+                <label  id="labelid" >小样儿</label>
+            </td>
+        </tr>
+    </table>
+    <div style="cursor:pointer;">
+          变成小手
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
