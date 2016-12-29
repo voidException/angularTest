@@ -6,7 +6,9 @@
     <link rel="stylesheet" href="style/jiandiaoTable.css">
     <link rel="stylesheet" href="style/commonStyle.css">
     <script  src="./angularJS/angular.js"></script>
+    <script  src="./angularJS/jquery.min.js" ></script>
     <script  src="javaScript/jindiaoTable.js" ></script>
+    <script  src="javaScript/jdTable.js" ></script>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
     <nav id="nav">
@@ -16,9 +18,9 @@
     <section>
         <header class="header">
             <span>尽调概况</span>
-            <img class="headerImg" src="../image/jiantou.png">
+            <img class="headerImg" id="theimage" src="../image/jiantou.png">
         </header>
-        <form>
+        <form class="panel">
             <div id="jigouWrapper">
                 <span style="margin-top: 8px;color: red"> * </span>
                 <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">机构全称</span>
@@ -35,7 +37,7 @@
                     <div class="xingWordSelect" >
                         <span style="margin-top: 8px;color: red"> * </span>
                         <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">金融顾问</span>
-                        <input id="jinrongguwen"  class="commonInputStyle"   ng-value="basicFact.jinrongConsult" type="text" maxlength="20" placeholder=" 必填,长度小于20字符"/>
+                        <input id="jinrongguwen"  class="commonInputStyle"   ng-value="basicFact.jinrongConsult" ng-readonly="basicFact.jinrongConsultCtr" type="text" maxlength="20" placeholder=" 必填,长度小于20字符"/>
                     </div>
                     <div class="twoSelect">
                         <span style="font-size: 12px;margin-right: 20px;">是否录音</span>
@@ -54,12 +56,12 @@
                     <div class="xingWordSelect">
                         <span style="margin-top: 8px;color: red"> * </span>
                         <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">资料补全日期</span>
-                        <input ng-value="basicFact.materialCompleteDoneDate"  class="commonInputStyle" type="date" />
+                        <input ng-value="basicFact.materialCompleteDoneDate"  ng-readonly="basicFact.materialCompleteDoneDateCtr" class="commonInputStyle" type="date" />
                         <!--默认值用value设置,获取数据用ng-model-->
                     </div>
                     <div class="xingWordSelect">
                         <span style="font-size: 12px;">现场风控人</span>
-                        <input ng-value="basicFact.liveRiskMan"  class="commonInputStyle" type="text" />
+                        <input ng-value="basicFact.liveRiskMan"  ng-readonly="basicFact.liveRiskManCtr" class="commonInputStyle" type="text" />
                     </div>
                     <div class="twoSelect">
                         <span style="font-size: 12px;margin-right: 20px;">是否视频</span>
@@ -77,16 +79,16 @@
                     <div class="xingWordSelect">
                         <span style="margin-top: 8px;color: red"> * </span>
                         <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">尽调开始日期</span>
-                        <input  ng-value="basicFact.surveyBeginDate" class="commonInputStyle" type="date" />
+                        <input  ng-value="basicFact.surveyBeginDate" ng-readonly="basicFact.surveyBeginDateCtr" class="commonInputStyle" type="date" />
                     </div>
                     <div class="xingWordSelect">
                         <span style="font-size: 12px;margin-right: 15px">尽调方式</span>
-                        <select ng-model="basicFact.surveyMethodModel" ng-options="x for x in basicFact.surveyMethod"  style="width: 150px;height: 25px"></select>
+                        <select ng-model="basicFact.surveyMethodModel" ng-options="x for x in basicFact.surveyMethod" ng-disabled="basicFact.surveyMethodCtr" style="width: 150px;height: 25px"></select>
                     </div>
 
                     <div class="xingWordSelect">
                         <span style="font-size: 12px;margin-right: 15px">尽调准备进度</span>
-                        <select ng-model="basicFact.surveyProgressModel" ng-options="x for x in basicFact.surveyProgress"  style="width: 150px;height: 25px"></select>
+                        <select ng-model="basicFact.surveyProgressModel" ng-options="x for x in basicFact.surveyProgress"  ng-disabled="basicFact.surveyProgressCtr" style="width: 150px;height: 25px"></select>
                     </div>
 
                 </div>

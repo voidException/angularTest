@@ -32,7 +32,7 @@ app.controller('myCtrl', function($scope) {
 
     //这个是控制相关数据域是否只读的,如果 $scope.staticTag=1,全部可编辑,否则通过设置true只读,点击取消保和编辑均需要改变这里的值
     $scope.basicFact.jigouNameCtr=false; //机构全称是否可编辑
-    $scope.basicFact.applyDateCtr=true; //申请日期是否可编辑
+    $scope.basicFact.applyDateCtr=false; //申请日期是否可编辑
     $scope.basicFact.jinrongConsultCtr=false; //金融顾问是否可编辑
     $scope.basicFact.recordSoundYesCtr=false;   // 录音 是否可编辑
     $scope.basicFact.recordSoundNoCtr=false;  // 未录音,是否可编辑
@@ -53,7 +53,7 @@ app.controller('myCtrl', function($scope) {
         //$scope.basicFact.applyDateCtr=false;
         if($scope.staticTag==1 ){ //初次创建
             $scope.basicFact.jigouName=null; //机构全称
-            $scope.basicFact.applyDate=null; //申请日期
+            $scope.basicFact.applyDate="2011-01-04" ||null; //申请日期
             $scope.basicFact.jinrongConsult=null; //金融顾问
             $scope.basicFact.recordSoundYes=false;   // 录音 true 代表选中
             $scope.basicFact.recordSoundNo=false;  // 未录音, true代表选中
@@ -116,7 +116,7 @@ app.controller('myCtrl', function($scope) {
         //需要校验权限
         //这个是控制相关数据域是否只读的,如果 $scope.staticTag=1,全部可编辑,否则通过设置true只读,点击取消保和编辑均需要改变这里的值
         $scope.basicFact.jigouNameCtr=false; //机构全称是否可编辑
-        $scope.basicFact.applyDateCtr=true; //申请日期是否可编辑
+        $scope.basicFact.applyDateCtr=false; //申请日期是否可编辑
         $scope.basicFact.jinrongConsultCtr=false; //金融顾问是否可编辑
         $scope.basicFact.recordSoundYesCtr=false;   // 录音 是否可编辑
         $scope.basicFact.recordSoundNoCtr=false;  // 未录音,是否可编辑
