@@ -1,0 +1,36 @@
+.jigougaikuangBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.jigougaikuangBodyLeft{
+    display: flex;
+    flex-direction: column;
+}
+.twoSelect1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #919191;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+.hezuodaikuanjigou{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #919191;
+    margin-top: 15px;
+}
+.jigougaikuangLeftRight{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.rightTopper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

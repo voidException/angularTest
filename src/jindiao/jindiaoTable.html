@@ -5,10 +5,14 @@
     <title>机构尽调表</title>
     <link rel="stylesheet" href="style/jiandiaoTable.css">
     <link rel="stylesheet" href="style/commonStyle.css">
+    <link rel="stylesheet" href="style/xianChangDiaoCha.css">
+    <link rel="stylesheet" href="style/jigouxinxi.css">
+
     <script  src="./angularJS/angular.js"></script>
     <script  src="./angularJS/jquery.min.js" ></script>
     <script  src="javaScript/jindiaoTable.js" ></script>
     <script  src="javaScript/jdTable.js" ></script>
+    <script  type="text/javascript" src="javaScript/jsAddress.js"></script>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
     <nav id="nav">
@@ -101,7 +105,267 @@
             </div>
         </form>
    </section>
+    <!--现场调查模块-->
+   <section>
+       <!--标题-->
+       <header class="header">
+           <span>现场调查</span>
+           <img class="headerImg" id="theimage2" src="../image/jiantou.png">
+       </header>
+       <!--主体-->
+       <div class="panel" style="padding-left: 30px">
+           <!--最头部的部分-->
+           <div class="xianChangUp">
+               <div>
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;">教室的间数</span>
+                       <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                   </div>
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;">在读学生数</span>
+                       <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                   </div>
+               </div>
+               <div>
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;">座位数</span>
+                       <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                   </div>
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;">现场学生数</span>
+                       <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                   </div>
+               </div>
+               <div>
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;">办公室数</span>
+                       <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                   </div>
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;">员工数</span>
+                       <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                   </div>
+               </div>
+           </div>
+           <!--中间含有图片部分-->
+           <div class="xianChangMiddle">
+               <div class="left">
+                   <div class="lefttop">
+                       <div class="xingWordSelect">
+                           <span style="font-size: 12px;">专职教师数</span>
+                           <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                       </div>
+                       <div class="xingWordSelect">
+                           <span style="font-size: 12px;">兼职教室数</span>
+                           <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                       </div>
+                   </div>
 
+                   <div class="kechenganpai">
+                       <span style="font-size: 12px;">课程安排</span>
+                       <input class="jigouname"   ng-readonly="basicFact.jigouNameCtr" ng-value="basicFact.jigouName" type="text"  maxlength="50"  placeholder=" 必填,长度小于50字符" >
+                   </div>
 
+                   <div class="xianChangMiddleSelect">
+                       <div class="twoSelect">
+                           <span style="font-size: 12px;margin-right: 20px;">投影</span>
+                           <div style="margin-right: 60px">
+                               <input ng-value="basicFact.recordVedioYes" ng-disabled="basicFact.recordVedioYesCtr" type="checkbox"/>
+                               <span style="font-size: 12px;">有</span>
+                           </div>
+                           <div>
+                               <input ng-value="basicFact.recordVedioNo" ng-disabled="basicFact.recordVedioNoCtr"   type="checkbox" />
+                               <span style="font-size: 12px;">无</span>
+                           </div>
+                       </div>
+                       <div class="twoSelect">
+                           <span style="font-size: 12px;margin-right: 20px;">电脑</span>
+                           <div style="margin-right: 60px">
+                               <input ng-value="basicFact.recordVedioYes" ng-disabled="basicFact.recordVedioYesCtr" type="checkbox"/>
+                               <span style="font-size: 12px;">有</span>
+                           </div>
+                           <div>
+                               <input ng-value="basicFact.recordVedioNo" ng-disabled="basicFact.recordVedioNoCtr"   type="checkbox" />
+                               <span style="font-size: 12px;">无</span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="right">
+                   <img src="../image/28.jpg"  style="height: 140px;width: 140px;padding: 10px"/>
+               </div>
+           </div>
+           <!--课程表照片墙-->
+           <div class="xianChangKZ">
+               <div class="twoSelect">
+                   <span style="font-size: 12px;margin-right: 20px;">课程表</span>
+                   <div style="margin-right: 60px">
+                       <input ng-value="basicFact.recordVedioYes" ng-disabled="basicFact.recordVedioYesCtr" type="checkbox"/>
+                       <span style="font-size: 12px;">有</span>
+                   </div>
+                   <div>
+                       <input ng-value="basicFact.recordVedioNo" ng-disabled="basicFact.recordVedioNoCtr"   type="checkbox" />
+                       <span style="font-size: 12px;">无</span>
+                   </div>
+               </div>
+               <div class="twoSelect" style="margin-left: 250px">
+                   <span style="font-size: 12px;margin-right: 20px;">照片墙</span>
+                   <div style="margin-right: 60px">
+                       <input ng-value="basicFact.recordVedioYes" ng-disabled="basicFact.recordVedioYesCtr" type="checkbox"/>
+                       <span style="font-size: 12px;">有</span>
+                   </div>
+                   <div>
+                       <input ng-value="basicFact.recordVedioNo" ng-disabled="basicFact.recordVedioNoCtr"   type="checkbox" />
+                       <span style="font-size: 12px;">无</span>
+                   </div>
+               </div>
+           </div>
+           <!--门牌号-->
+           <div class="doorNo">
+               <div class="twoSelect">
+                   <span style="font-size: 12px;margin-right: 20px;">门牌号</span>
+                   <div style="margin-right: 60px">
+                       <input ng-value="basicFact.recordVedioYes" ng-disabled="basicFact.recordVedioYesCtr" type="checkbox"/>
+                       <span style="font-size: 12px;">有</span>
+                   </div>
+                   <div>
+                       <input ng-value="basicFact.recordVedioNo" ng-disabled="basicFact.recordVedioNoCtr"   type="checkbox" />
+                       <span style="font-size: 12px;">无</span>
+                   </div>
+               </div>
+           </div>
+           <!--备注 -->
+           <div class="beizhu">
+               <span style="font-size: 12px;">备注</span>
+               <input class="beizhuInput"   ng-readonly="" ng-value="" type="text"  maxlength="50"  placeholder="" >
+           </div>
+           <!--取消 保存-->
+           <div class="quxiaoBaocun">
+               <input class="cancel" ng-click="basicFact.cancel()" type="button" value="取消" >
+               <input class="save"   ng-click="basicFact.save()" type="button" value="保存"  >
+               <input class="save"   ng-click="basicFact.edit()" type="button" value="编辑"  >
+           </div>
+       </div>
+   </section>
+   <section>
+       <!--标题-->
+       <header class="header">
+           <span>机构信息</span>
+           <img class="headerImg" id="theimage3" src="../image/jiantou.png">
+       </header>
+       <!--主体布局,三大板块-->
+       <div>
+           <div>机构概况</div>
+           <!--机构概况,板块布局,总体左右2分布局-->
+           <div class="jigougaikuangLeftRight">
+               <!--左边-->
+                <div style="width: 45%">
+                    <!--成立时间-->
+                    <div>
+                        <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">成立时间</span>
+                        <input   class="commonInputStyle"  type="date" />
+                    </div>
+                   <!--成立时间-->
+                    <div class="twoSelect1">
+                        <span style="font-size: 12px;margin-right: 20px;">培训资质</span>
+                        <div>
+                            <input ng-value="basicFact.recordVedioYes" ng-disabled="basicFact.recordVedioYesCtr" type="checkbox"/>
+                            <span style="font-size: 12px;">有</span>
+                        </div>
+                        <div>
+                            <input ng-value="basicFact.recordVedioNo" ng-disabled="basicFact.recordVedioNoCtr"   type="checkbox" />
+                            <span style="font-size: 12px;">无</span>
+                        </div>
+                    </div>
+                    <!--所在地区-->
+                    <div>
+                        <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">所在地区</span>
+                        省：<select id="cmbProvince"></select>
+                        市：<select id="cmbCity"></select>
+                        区：<select id="cmbArea"></select>
+                        <br />
+                    </div>
+                    <!--合作贷款机构-->
+                    <div class="hezuodaikuanjigou" >
+                        <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">合作贷款机构</span>
+                        <input   class="commonInputStyle"   ng-value="" ng-readonly="" type="text" maxlength="20" />
+                    </div>
+                    <!--获取贷贷熊渠道-->
+                    <div class="hezuodaikuanjigou">
+                        <span style="font-size: 12px;margin-right: 15px">获取贷贷熊渠道</span>
+                        <select ng-model="basicFact.surveyProgressModel" ng-options="x for x in basicFact.surveyProgress"  ng-disabled="basicFact.surveyProgressCtr" style="width: 150px;height: 25px"></select>
+                    </div>
+                </div>
+               <!--右边-->
+                <div style="width: 65%">
+                    <!--起始教学时间和企业性质-->
+                    <div class="rightTopper">
+                        <div>
+                            <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">成立时间</span>
+                            <input   class="commonInputStyle"  type="date" />
+                        </div>
+                        <div class="hezuodaikuanjigou">
+                            <span style="font-size: 12px;margin-right: 15px">企业性质</span>
+                            <select>
+                                <option value ="volvo">普通私企</option>
+                                <option value ="saab">国企</option>
+                                <option value="opel">上市公司</option>
+                                <option value="audi">外资投资</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--联系人和联系人手机号-->
+                    <div class="rightTopper">
+                        <div class="hezuodaikuanjigou" >
+                            <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">联系人</span>
+                            <input   class="commonInputStyle"   ng-value="" ng-readonly="" type="text" maxlength="20" />
+                        </div>
+                        <div class="hezuodaikuanjigou" >
+                            <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">联系人手机号</span>
+                            <input   class="commonInputStyle"   ng-value="" ng-readonly="" type="text" maxlength="20" />
+                        </div>
+                    </div>
+                    <!--详细地址-->
+                    <div class="beizhu">
+                        <span style="font-size: 12px;">详细地址</span>
+                        <input class="beizhuInput"   ng-readonly="" ng-value="" type="text"  maxlength="50"  placeholder="" >
+                    </div>
+                    <!--其它业务-->
+                    <div class="beizhu">
+                        <span style="font-size: 12px;">其它业务</span>
+                        <input class="beizhuInput"   ng-readonly="" ng-value="" type="text"  maxlength="50"  placeholder="" >
+                    </div>
+                    <!--网查负面信息-->
+                    <div class="beizhu">
+                        <span style="font-size: 12px;">网查负面信息</span>
+                        <input class="beizhuInput"   ng-readonly="" ng-value="" type="text"  maxlength="50"  placeholder="" >
+                    </div>
+                </div>
+           </div>
+           <!--企业法院执行-->
+           <div class="twoSelect1">
+               <span style="font-size: 12px;margin-right: 20px;">企业法院执行</span>
+               <div>
+                   <input ng-value="basicFact.recordVedioYes" ng-disabled="basicFact.recordVedioYesCtr" type="checkbox"/>
+                   <span style="font-size: 12px;">有</span>
+               </div>
+               <div>
+                   <input ng-value="basicFact.recordVedioNo" ng-disabled="basicFact.recordVedioNoCtr"   type="checkbox" />
+                   <span style="font-size: 12px;">无</span>
+               </div>
+           </div>
+           <!--备注-->
+           <div class="beizhu">
+               <span style="font-size: 12px;">备注</span>
+               <input class="beizhuInput"   ng-readonly="" ng-value="" type="text"  maxlength="50"  placeholder="" >
+           </div>
+           <!--分割线-->
+           <div style="border-top: 1px dashed #919191 ;border-width: 0.5px;margin-top: 10px;margin-bottom: 10px">
+           </div>
+       </div>
+   </section>
+    <script type="text/javascript">
+        addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+    </script>
 </body>
 </html>

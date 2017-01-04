@@ -1,0 +1,56 @@
+.xianChangUp{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.xianChangMiddle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.kechenganpai{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #919191;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.lefttop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.xianChangMiddleSelect{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.xianChangKZ{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.doorNo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.beizhu{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: #919191;
+    margin-top: 20px;
+}
+.beizhuInput{
+    height: 20px;
+    width: 90%;
+    border-radius: 4px;
+    border:1px solid #DBDBDB ;
+}
