@@ -94,7 +94,6 @@
                         <span style="font-size: 12px;margin-right: 15px">尽调准备进度</span>
                         <select ng-model="basicFact.surveyProgressModel" ng-options="x for x in basicFact.surveyProgress"  ng-disabled="basicFact.surveyProgressCtr" style="width: 150px;height: 25px"></select>
                     </div>
-
                 </div>
             </div>
             <!--取消 保存-->
@@ -247,6 +246,7 @@
            </div>
        </div>
    </section>
+
    <section>
        <!--标题-->
        <header class="header">
@@ -255,7 +255,7 @@
        </header>
        <!--主体布局,三大板块-->
        <div>
-           <div>机构概况</div>
+           <div style="font-size: 14px">机构概况</div>
            <!--机构概况,板块布局,总体左右2分布局-->
            <div class="jigougaikuangLeftRight">
                <!--左边-->
@@ -362,8 +362,207 @@
            <!--分割线-->
            <div style="border-top: 1px dashed #919191 ;border-width: 0.5px;margin-top: 10px;margin-bottom: 10px">
            </div>
+           <!--原件复核(请复核原件与资料是否一致),布局-->
+           <div style="font-size: 14px">原件复核(请复核原件与资料是否一致)</div>
+           <!--主体-->
+           <div class="bigWrapper">
+               <!--左边侧-->
+               <div class="xingWordSelectWrapper" >
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">营业执照</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">组织机构代码</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">租赁合同</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+               </div>
+              <!--中间-->
+               <div class="xingWordSelectWrapper">
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">税务登记证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">法人身份证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">办学许可证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+               </div>
+               <!--右边侧-->
+               <div class="xingWordSelectWrapper">
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">开户许可证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">学生协议</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+
+                   <div class="xingWordSelect" >
+                       <!--用来占位用的-->
+                   </div>
+               </div>
+           </div>
+           <!--分割线-->
+           <div style="border-top: 1px dashed #919191 ;border-width: 0.5px;margin-top: 10px;margin-bottom: 10px"></div>
+           <div> 合同地址是否一致</div>
+           <!--场地1审核-->
+           <div class="bigWrapper">
+               <!--左边侧-->
+               <div class="xingWordSelectWrapper" >
+                   <div class="xingWordSelect">
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">合同地址是否一致</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+                   <div class="xingWordSelect" >
+                       <div class="xingWordSelect">
+                           <span style="font-size: 12px;">押金(元)</span>
+                           <input ng-value=" "  ng-readonly=" " class="commonInputStyle" type="text" />
+                       </div>
+                   </div>
+                   <div class="xingWordSelect">
+                       <span style="margin-top: 8px;color: red"> * </span>
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">申请日期</span>
+                       <input id=" "  class="commonInputStyle" ng-value="basicFact.applyDate" ng-readonly="basicFact.applyDateCtr" type="date" />
+                   </div>
+               </div>
+               <!--中间-->
+               <div class="xingWordSelectWrapper">
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">税务登记证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">法人身份证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">办学许可证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+               </div>
+               <!--右边侧-->
+               <div class="xingWordSelectWrapper">
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">开户许可证</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+
+                   <div class="xingWordSelect" >
+                       <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">学生协议</span>
+                       <select class="commonInputStyle">
+                           <option value ="volvo">请选择</option>
+                           <option value ="saab">一致</option>
+                           <option value="opel">不一致</option>
+                           <option value="audi">未见原件</option>
+                       </select>
+                   </div>
+
+                   <div class="xingWordSelect" >
+                       <!--用来占位用的-->
+                   </div>
+               </div>
+           </div>
        </div>
-   </section>
+    </section>
+    <section>
+        <!--法人/实际负责人信息-->
+        <header class="header">
+            <span>法人/实际负责人信息</span>
+            <img class="headerImg" id="theimage4" src="../image/jiantou.png">
+        </header>
+        <div>
+            <div class="faRenInfo">
+                <div class="xingWordSelect" >
+                    <span style="font-size: 12px;margin-right: 10px;margin-left: 5px">学生协议</span>
+                    <select class="commonInputStyle">
+                        <option value ="volvo">请选择</option>
+                        <option value ="saab">一致</option>
+                        <option value="opel">不一致</option>
+                        <option value="audi">未见原件</option>
+                    </select>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
     <script type="text/javascript">
         addressInit('cmbProvince', 'cmbCity', 'cmbArea');
     </script>

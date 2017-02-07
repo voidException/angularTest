@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rendlist</title>
+    <style>
+        .finished{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <task-app :list="tasks"></task-app>
+    <task-app :list="[{body:'vue',finished:false}]"></task-app>
+</div>
+<template id="task-template">
+    <h1>
+        my tasks({{list.length}})
+        剩余的tasks<span v-show="remaining">({{remaining}})</span>
+    </h1>
+    <div>
+        <ol>
+            <li
+                    @click="toggle(task)"
+                    :class="{'finished':task.finished}"
+                    v-for="task in list">
+                {{task.body}} <strong @click="delete">X</strong>
+            </li>
+        </ol>
+    </div>
+</template>
+<script src="http://cdn.bootcss.com/vue/2.0.0/vue.js"></script>
+<script>
+    Vue.component('task-app',{
+        template:"#task-template",
+        props:['list'],
+        methods:{
+            toggle:function (task) {
+                task.finished=!task.finished;
+            },
+            delete:function (task) {
+                this.list.$remote(task);
+            }
+        },
+        computed:{
+            remaining:function (task) {
+                return this.list.filter(function (task) {
+                    return !task.finished;
+                }).length;
+
+            }
+        }
+    })
+    new Vue({
+        el:"#app",
+        data:{
+            tasks:[
+                {body:"java",finished:false},
+                {body:"c#",finished:true},
+                {body:"html",finished:false},
+            ]
+        },
+
+    })
+</script>
+</body>
+</html>
