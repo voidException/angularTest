@@ -599,7 +599,9 @@ var example1 = new Vue({
                 "donate": null
             }
         ],
-        counter:0
+        counter:0,
+        updateORprogress:true,
+        updateORprogress2:false,
     },
     methods: {
         test: function (event) {
@@ -608,6 +610,21 @@ var example1 = new Vue({
 
         },
         handleClick: function() {
+             this.updateORprogress=true;
+             this.updateORprogress2=false;
+        },
+        handleClick2: function() {
+            this.updateORprogress=false;
+            this.updateORprogress2=true;
+
+            var div=document.getElementById("test");
+            console.log(div.getAttribute("type")); //huifu
+            div.setAttribute("type","update");
+            console.log(div.getAttribute("type")); //update
+
+            //console.log(localStorage.getItem('age'))
+            //let divTxt=document.getElementById("test").textContent;
+            //console.log(divTxt);
 
         },
 

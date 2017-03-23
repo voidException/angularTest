@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/modalTipsLogin.css">
+    <title>模态框</title>
+</head>
+<body>
+
+    <div class="contain">
+        <div  class="clickWo" onclick="clickMe()">点击不到我</div>
+        <div onclick="alertComment()">显示评论框</div>
+        <div onclick="showDialog()">显示dialog</div>
+        <div onclick="loginByEmail()">邮箱登录</div>
+        <!--这个"modal 初始时是要隐藏的"-->
+        <div id="modal" class="modal">
+            <div id="tips" class="tips">
+                <div class="doComment">发表评论</div>
+                <div style="margin-right: 15px;margin-left: 15px">
+                    <textarea class="commentText"  rows="6" cols="3"  placeholder="填写评论内容"></textarea>
+                </div>
+                <div class="cancelReplay">
+                    <div class="cancel"  onclick="cancel()">取消</div>
+                    <div class="cancel"  onclick="reply()">回复</div>
+                </div>
+            </div>
+        </div>
+        <!--以下这个是发送请求结束后的提示-->
+        <div id="dialog" class="dialog">
+            <div id="dialogTips" class="dialogTips">回复成功</div>
+        </div>
+        <!--这个是邮箱登录界面-->
+        <div id="loginEmail" class="loginEmail">
+            <div class="loginMain">
+                <div class="closeWrapper">
+                    <img class="clickImg" src="image/close2.png">
+                </div>
+
+                <div class="logoWrapper">
+                    <img src="image/512.png" style="width: 50px;height: 50px;border-radius: 25px" />
+                </div>
+                <!--邮箱,密码输入域-->
+                <div class="emailWrapper">
+                    <div class="emailpassTxt">邮箱</div>
+                    <input class="input" placeholder="输入你的邮箱"/>
+                </div>
+
+                <div class="passwdWrapper">
+                    <div class="emailpassTxt">密码</div>
+                    <input class="input" placeholder="输入你的密码"/>
+                </div>
+                <div class="loginInWrapper">
+                    <div class="loginIn">登录</div>
+                </div>
+                <!--微信登录-->
+                <div class="wechatQQweibo">
+                    <div><img  class="wechatImg" src="image/wechat.png"></div>
+                    <div><img  class="wechatImg"src="image/weibo.png"></div>
+                    <div><img  class="wechatImg"src="image/QQ.png"></div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+
+
+<script  language="javascript">
+    var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    function clickMe(){
+        console.log("点击不到我的")
+    }
+
+    /*在弹出的时候,获取是回复还是更新等,对应更改弹出框相应样式和设置不同标记,为后续显示"回复""提交",等判断该调用的网络接口.
+    *
+    * 1.这要求,在回复评论,评论,进度更新,评论更新,举报,证实等地方,需要做不同的标记.
+    * 2.点击时,依据1处的标记,设置弹出框的样式,和设置样式框的标记
+    * 3.提交时,依据2处的样式框的标记,在vue中调用不同的网络请求
+    *
+    * */
+    function alertComment(){
+        let  modal=document.getElementById("modal");
+        let  tips=document.getElementById("tips");
+
+        if (modal.style.display=="none" ||modal.style.display==""){
+            modal.style.display="block";
+            tips.style.display="block";
+        }
+        localStorage.setItem('age',19);
+        console.log(localStorage.getItem('age'));
+    }
+
+    function cancel(){
+
+        let  modal=document.getElementById("modal");
+        let  tips=document.getElementById("tips");
+
+        if (modal.style.display=="" || modal.style.display=="block"){
+            modal.style.display="none";
+            tips.style.display="none";
+        }
+    }
+
+    function reply(){
+        /*1.先隐藏模态框*/
+        let  modal=document.getElementById("modal");
+        let  tips=document.getElementById("tips");
+
+        if (modal.style.display==""){
+            modal.style.display="none";
+            tips.style.display="none";
+        }
+        /*2.发送网络请求*/
+
+        /*3.根据网络请求的结果,显示一个提示,1秒后消失*/
+        let  dialog=document.getElementById("dialog");
+        let  dialogTips=document.getElementById("dialogTips");
+
+        if (dialog.style.display=="" || dialog.style.display=="none"){
+            dialog.style.display="none";
+            dialogTips.style.display="none";
+        }
+
+    }
+
+</script>
+<script>
+    function showDialog(){
+        /*1.先隐藏模态框*/
+        let  modal=document.getElementById("modal");
+        let  tips=document.getElementById("tips");
+
+        if (modal.style.display==""){
+            modal.style.display="none";
+            tips.style.display="none";
+        }
+        /*2.发送网络请求*/
+
+        /*3.根据网络请求的结果,显示一个提示,1秒后消失*/
+        let  dialog=document.getElementById("dialog");
+        let  dialogTips=document.getElementById("dialogTips");
+
+        if (dialog.style.display=="" || dialog.style.display=="none"){
+            dialog.style.display="block";
+            dialogTips.style.display="block";
+        }
+        setTimeout(function(){
+            dialog.style.display="none";
+            dialogTips.style.display="none";
+        },2000);
+
+    }
+</script>
+<script>
+
+</script>
+
+</body>
+</html>

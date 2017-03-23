@@ -1,1 +1,32 @@
-<!DOCTYPE html><html><head><title>Apache Tomcat/8.5.8 - Error report</title><style type="text/css">H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}.line {height: 1px; background-color: #525D76; border: none;}</style> </head><body><h1>HTTP Status 400 - </h1><div class="line"></div><p><b>type</b> Status report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The request sent by the client was syntactically incorrect.</u></p><hr class="line"><h3>Apache Tomcat/8.5.8</h3></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+
+<body>
+
+    <div id="part1" style="height:2000px;overflow: auto;background: lightblue;">
+    </div>
+    <div id="part2" style="height:3000px;overflow: auto;background:lightcoral;">
+    </div>
+<script>
+//     console.info(document.body.scrollHeight);
+//     console.info(document.body.clientHeight);
+//     console.info(document.body.offsetHeight);
+
+    var d = document.getElementById("part1").offsetHeight;
+   // console.info(d);
+
+    window.addEventListener("scroll", function(event) {
+        var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        //console.log(scrollTop);
+        if(document.documentElement.scrollHeight == document.documentElement.clientHeight + scrollTop ) {
+            alert("到底部啦");
+        }
+    });
+</script>
+</body>
+</html>

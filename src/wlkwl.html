@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .bluequestionmark
+        {
+            background-repeat:no-repeat;
+            display:inline-block;
+            background-size:16px 16px;
+            width:16px;
+            height:16px;
+            position:relative;/*the out div must be position:relative*/
+        }
+
+        a.tipinfo
+        {
+            display:none;
+        }
+
+        div.bluequestionmark:hover a.tipinfo
+        {
+            white-space:nowrap;/*the pop up infomation will show in one line*/
+            display:block;
+            border:1px solid #0094ff;
+            position:absolute;
+            top:18px;
+            left:0px;
+            padding:6px 10px;
+            background-color:white;
+        }
+
+        a.tipinfo:hover a.tipinfo
+        {
+            white-space:nowrap;
+            display:block;
+            border:1px solid #0094ff;
+            position:absolute;
+            top:18px;
+            left:0px;
+            padding:6px 10px;
+            background-color:white;
+            cursor: text;
+        }
+    </style>
+</head>
+<body>
+move your mouse to pic
+<div class="bluequestionmark" style="background-image:url('http://img.blog.csdn.net/20131206112028640')">
+    <a class="tipinfo">a lot of pop up information</a>
+</div>
+</body>
+</html>
