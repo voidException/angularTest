@@ -1,5 +1,4 @@
 
-
 body{
     font-size: 16px;
     color: #6f7a7e;
@@ -27,15 +26,37 @@ body{
     font-size: 16px;
     color: #6f7a7e;
 }
-.login{
+.headerRight{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
     line-height: 40px;
-    width: 110px;
+    width: 220px;
     height: 40px;
     border-radius: 10px;
     border: #75ffba solid 1px;
     font-size: 16px;
     color: #6f7a7e;
+}
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: #73ff37 1px solid;
+    width: 110px;
+}
+.register{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-left: #73ff37 1px solid;
+    width: 110px;
 }
 .label{
     display: flex;
